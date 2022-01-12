@@ -5,7 +5,7 @@ files:
     destination: /home/ec2-user/codebase
 hooks:
   BeforeInstall:
-    - location: sudo chmod 777 scripts;scripts/install_dependencies.sh
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: ec2-user
   AfterInstall:
