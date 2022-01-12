@@ -5,19 +5,19 @@ files:
     destination: /home/ec2-user/codebase
 hooks:
   BeforeInstall:
-    - location: /home/ec2-user/codebase/scripts/install_dependencies.sh
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: ec2-user
   AfterInstall:
-    - location: /home/ec2-user/codebase/scripts/change_permissions.sh
+    - location: scripts/change_permissions.sh
       timeout: 300
       runas: ec2-user
   ApplicationStart:
-    - location: /home/ec2-user/codebase/scripts/application_start.sh
-    - location: /home/ec2-user/codebase/scripts/create_test_db.sh
+    - location: scripts/application_start.sh
+    - location: scripts/create_test_db.sh
       timeout: 300
       runas: ec2-user
   ApplicationStop:
-    - location: /home/ec2-user/codebase/scripts/application_stop.sh
+    - location: scripts/application_stop.sh
       timeout: 300
       runas: ec2-user
