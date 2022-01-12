@@ -1,27 +1,5 @@
 version: 0.0
-
 os: linux
-
 files:
-
-– source: /
-
-  destination: /home/ec2-user/codebase
-
-hooks:
-
-  ApplicationStop:
-
-    – location: /home/ec2-user/scripts/application_stop.sh
-
-      timeout: 300
-
-      runas: ec2-user
-
-  ApplicationStart:
-
-    – location: /home/ec2-user/scripts/scripts/application_start.sh
-
-      timeout: 300
-
-      runas: ec2-user
+ – source: /
+   destination: /home/ec2-user/codebase
