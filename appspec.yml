@@ -6,22 +6,22 @@ files:
 
 – source: /
 
-destination: /home/ec2-user/codebase
+  destination: /home/ec2-user/codebase
 
 hooks:
 
-ApplicationStop:
+  ApplicationStop:
 
-– location: /home/ec2-user/scripts/application_stop.sh
+    – location: /home/ec2-user/scripts/application_stop.sh
 
-timeout: 300
+      timeout: 300
 
-runas: ec2-user
+      runas: ec2-user
 
-ApplicationStart:
+  ApplicationStart:
 
-– location: /home/ec2-user/scripts/scripts/application_start.sh
+    – location: /home/ec2-user/scripts/scripts/application_start.sh
 
-timeout: 300
+      timeout: 300
 
-runas: ec2-user
+      runas: ec2-user
