@@ -1,0 +1,23 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/codebase
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: ec2-user
+  AfterInstall:
+    - location: scripts/change_permissions.sh
+      timeout: 300
+      runas: ec2-user
+  ApplicationStart:
+    - location: scripts/application_start.sh
+    - location: scripts/create_test_db.sh
+      timeout: 300
+      runas: ec2-user
+  ApplicationStop:
+    - location: scripts/application_stop.sh
+      timeout: 300
+      runas: ec2-user
