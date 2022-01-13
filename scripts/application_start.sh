@@ -5,5 +5,5 @@ cd /home/ec2-user/codebase
 echo result2 - $(pwd)
 #sudo mvn clean install
 #sudo java -jar /home/ec2-user/codebase/target/SpringBoot-0.0.1-SNAPSHOT.jar > test.log
-sudo java -jar /home/ec2-user/codebase/SpringBoot-0.0.1-SNAPSHOT.jar > test.log
+sudo  nohup java -jar /home/ec2-user/codebase/SpringBoot-0.0.1-SNAPSHOT.jar > test.log &
 echo "server started"
